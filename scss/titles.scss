@@ -1,0 +1,13 @@
+$title-decoration-height: 90px;
+$title-decoration-width: 70px;
+$text-big: 24px;
+
+.title {
+  font-size: $text-big;
+  transform: translate(-23px,-37px);
+}
+
+img {
+  height: $title-decoration-height;
+  width: $title-decoration-width;
+}
