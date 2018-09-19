@@ -3,6 +3,7 @@ $title-decoration-width: 70px;
 $text-big: 24px;
 
 .title {
+<<<<<<< HEAD
   font-size: 24px;
     padding: 32px 0 32px 50px;
     position: relative;
@@ -16,4 +17,13 @@ $text-big: 24px;
   z-index: -1;
   top: 0;
   left: 0;
+=======
+  font-size: $text-big;
+  transform: translate(-23px,-37px);
+}
+
+img {
+  height: $title-decoration-height;
+  width: $title-decoration-width;
+>>>>>>> adding both titles with their images
 }
