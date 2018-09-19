@@ -9,13 +9,8 @@ $text-small: 12px;
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
-<<<<<<< HEAD
   margin-bottom: 70px;
   padding: 0 75px;
->>>>>>> tech.scss added with content layout
-=======
-  padding: 0px 100px;
->>>>>>> adding the transition on .box
 }
 
 .box {
@@ -31,18 +26,23 @@ $text-small: 12px;
   text-align: center;
   width: 200px;
 
-   &::before {
-     border: 1px solid $green;
-     border-radius: 8px;
-     right: 10px;
-     bottom: 10px;
-     content: '';
-     height: 100%;
-     position: absolute;
-     width: 100%;
-     z-index: -1;
-   }
->>>>>>> adding the transition on .box
+  &::before {
+    border: 1px solid $green;
+    border-radius: 8px;
+    right: 10px;
+    bottom: 10px;
+    content: '';
+    height: 100%;
+    position: absolute;
+    transition: bottom 100ms ease-out;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.box:hover::before {
+  bottom: -10px;
+  left: 10px;
 }
 
 .box-title {
