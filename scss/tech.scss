@@ -1,0 +1,60 @@
+@import "colors";
+$nav-height: 70px;
+$nav-logo-height: 30px;
+$tech-logo-size: 100px;
+$text-big: 24px;
+$text-medium: 16px;
+$text-small: 12px;
+
+.boxes {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  margin-left: 50px;
+  margin-bottom: 75px;
+}
+
+.box {
+  background: $green;
+  border: 1px solid $green;
+  height: 300px;
+  margin: 25px;
+  outline: 1px solid $green;
+  position: relative;
+  text-align: center;
+  width: 200px;
+}
+
+.box::before {
+  border: 1px solid $green;
+  bottom: 10px;
+  content: '';
+  height: 300px;
+  left: -12px;
+  outline: 1px solid $green;
+  position: absolute;
+  width: 200px;
+  z-index: -1;
+}
+
+.box-title {
+  font-size: $text-medium;
+  margin: 10px;
+}
+
+.box-release {
+  font-size: $text-small;
+  font-weight: bold;
+  margin:10px;
+}
+
+.box-description {
+  font-size: $text-small;
+  margin:22px;
+}
+
+.box-cover {
+  height: $tech-logo-size;
+  margin:5px;
+  width: $tech-logo-size;
+}
