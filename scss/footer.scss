@@ -1,0 +1,31 @@
+@import 'colors';
+$text-big: 24px;
+$text-medium: 16px;
+$text-small: 12px;
+
+.footer {
+	background-color: $blue;
+  font-size: $text-big;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  height: 150px;
+  width: 100%;
+}
+
+/*.footer::before{
+  content: "WE ARE GAME CHANGERS";
+  font-size: $text-medium;
+}*/
+
+.footer::before {
+	content: url(../assets/wolox_logo.svg);
+  height: 200px;
+  width: 200px;
+}
+
+.footer::after{
+  content: "Copyright 2018. Wolox. All rights reserved";
+  font-size: $text-small;
+}
