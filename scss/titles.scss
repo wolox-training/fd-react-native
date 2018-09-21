@@ -4,10 +4,15 @@ $text-big: 24px;
 
 .title {
   font-size: $text-big;
-  transform: translate(-23px,-37px);
+  padding: 70px 70px;
 }
 
-img {
+.title::before {
+  content: url(../assets/triangle.svg);
   height: $title-decoration-height;
+  position: absolute;
+  margin-left: -50px;
+  margin-top: -35px;
   width: $title-decoration-width;
+  z-index: -1;
 }
