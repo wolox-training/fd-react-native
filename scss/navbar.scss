@@ -1,0 +1,27 @@
+@import 'colors';
+$nav-height: 90px;
+$nav-logo-height: 30px;
+$text-big: 24px;
+
+.pnav-bar {
+  position: fixed;
+  width: 100%;
+	z-index: 9999;
+}
+
+.nav-bar {
+	height: $nav-height;
+	font-size: $text-big;
+	display: flex;
+	justify-content: space-between;
+  flex-flow: row;
+	background-color: white;
+	box-shadow:0px 1px 5px $grey;
+	align-items: center;
+}
+
+.nav-bar::before {
+	content: url(../assets/wolox_logo.svg);
+  height: $nav-logo-height;
+  width: 200px;
+}
