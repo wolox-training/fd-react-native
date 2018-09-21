@@ -6,6 +6,7 @@ $text-small: 12px;
 .footer {
 	background-color: $blue;
   font-size: $text-big;
+	color:white;
   display: flex;
   justify-content: center;
   flex-flow: column;
@@ -14,18 +15,20 @@ $text-small: 12px;
   width: 100%;
 }
 
-/*.footer::before{
-  content: "WE ARE GAME CHANGERS";
-  font-size: $text-medium;
-}*/
-
 .footer::before {
-	content: url(../assets/wolox_logo.svg);
+	content: ' ';
+	background: url(../assets/wolox_logo_white.svg);
+	background-size:contain;
   height: 200px;
+	display: flex;
+  justify-content: center;
   width: 200px;
 }
 
-.footer::after{
+
+.footer::after {
   content: "Copyright 2018. Wolox. All rights reserved";
   font-size: $text-small;
+	display: flex;
+	justify-content: flex-end;
 }
