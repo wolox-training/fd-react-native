@@ -8,27 +8,23 @@ $text-small: 12px;
   font-size: $text-big;
 	color:white;
   display: flex;
-  justify-content: center;
-  flex-flow: column;
-  align-items: center;
+  flex-direction: column;
+	justify-content: center;
+	text-align: center;
   height: 150px;
-  width: 100%;
 }
 
 .footer::before {
-	content: ' ';
-	background: url(../assets/wolox_logo_white.svg);
-	background-size:contain;
-  height: 200px;
-	display: flex;
-  justify-content: center;
-  width: 200px;
+	content: url(../assets/wolox_logo_white.svg);
+	order: 1;
+	padding: 5px;
 }
 
 
 .footer::after {
   content: "Copyright 2018. Wolox. All rights reserved";
-  font-size: $text-small;
 	display: flex;
-	justify-content: flex-end;
+	flex-direction: row-reverse;
+  font-size: $text-small;
+	order: 1;
 }
