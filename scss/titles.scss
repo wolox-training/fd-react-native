@@ -3,10 +3,10 @@ $title-decoration-width: 70px;
 $text-big: 24px;
 
 .title {
-  font-size: 24px;
+  font-size: $text-big;
   padding: 32px 0 32px 50px;
   position: relative;
-  margin: 50px 0 5px 50px;
+  margin: 50px 0 15px 50px;
 }
 
 .title::before {
@@ -17,5 +17,4 @@ $text-big: 24px;
   z-index: -1;
   top: 0;
   left: 0;
-  font-size: $text-big;
 }
