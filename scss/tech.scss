@@ -6,10 +6,10 @@ $text-medium: 16px;
 $text-small: 12px;
 
 .boxes {
-  margin-bottom: 75px;
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
+  margin-bottom: 70px;
   padding: 0 100px 0 100px;
 }
 
@@ -20,8 +20,8 @@ $text-small: 12px;
   display: flex;
   flex-direction: column;
   min-height: 310px;
-  margin: 25px;
-  padding: 40px;
+  margin: 15px;
+  padding: 40px 20px;
   position: relative;
   text-align: center;
   width: 200px;
@@ -52,6 +52,13 @@ $text-small: 12px;
 
 .box-description {
   font-size: $text-small;
+}
+
+.box-cover {
+  display: block;
+  height: $tech-logo-size;
+  object-fit: fill;
+  width: $tech-logo-size;
 }
 
 .box-cover {
