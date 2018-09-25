@@ -6,7 +6,7 @@ $text-big: 24px;
   font-size: $text-big;
   padding: 32px 0 32px 50px;
   position: relative;
-  margin: 50px 0 15px 50px;
+  margin-bottom: 15px;
 }
 
 .title::before {
@@ -17,4 +17,8 @@ $text-big: 24px;
   z-index: -1;
   top: 0;
   left: 0;
+}
+
+.title-container {
+  padding: 50px;
 }
