@@ -5,27 +5,30 @@ $text-small: 12px;
 
 .footer {
 	background-color: $blue;
-  font-size: $text-big;
-	color:white;
   display: flex;
+
   flex-direction: column;
-	justify-content: center;
-	text-align: center;
-  height: 150px;
-	margin-top: 90px;
+	align-content: center;
+  height: 200px;
+	width: 100%;
 }
 
-.footer::before {
-	content: url(../assets/wolox_logo_white.svg);
-	order: 1;
-	padding: 5px;
-}
-
-
-.footer::after {
-  content: "Copyright 2018. Wolox. All rights reserved";
+.footer-copyright {
+	padding: 30px;
+	color: white;
 	display: flex;
-	flex-direction: row-reverse;
   font-size: $text-small;
-	order: 1;
+	align-self: flex-end;
+}
+
+.footer-title {
+	padding-top: 30px;
+  font-size: $text-big;
+	display: flex;
+	color: white;
+	align-self: center;
+}
+
+.footer-image {
+	padding-top: 30px;
 }
