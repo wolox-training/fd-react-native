@@ -8,14 +8,13 @@ $nav-logo-height: 30px;
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  height: 100px;
   width: 100%;
   z-index: 1;
 }
 
 .nav-bar-text {
-  font-size: $text-big;
-  height: $nav-height;
-  width: 100%;
+  font-size: $text-big
 }
 
 .nav-bar-logo {
