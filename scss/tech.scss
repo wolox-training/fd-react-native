@@ -41,7 +41,7 @@ $text-small: 12px;
 }
 
 .box:hover::before {
-  bottom: -10px;
+  top: 10px;
   left: 10px;
 }
 
@@ -64,5 +64,5 @@ $text-small: 12px;
   display: block;
   height: $tech-logo-size;
   object-fit: fill;
-  margin:22px;
+  width: $tech-logo-size;
 }
