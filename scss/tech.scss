@@ -34,15 +34,15 @@ $text-small: 12px;
     content: '';
     height: 100%;
     position: absolute;
-    transition: bottom 100ms ease-out;
+    transition: bottom, right 0.5s ease-out;
     width: 100%;
     z-index: -1;
   }
-}
 
-.box:hover::before {
-  top: 10px;
-  left: 10px;
+  &:hover::before {
+    top: 10px;
+    left: 10px;
+  }
 }
 
 .box-title {
