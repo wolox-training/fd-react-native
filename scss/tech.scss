@@ -34,7 +34,7 @@ $text-small: 12px;
     content: '';
     height: 100%;
     position: absolute;
-    transition: bottom, right 0.5s ease-out;
+    transition: bottom 0.5s ease-out, right 0.5s ease-out;
     width: 100%;
     z-index: -1;
   }
