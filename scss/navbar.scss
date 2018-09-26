@@ -1,27 +1,26 @@
-@import 'colors';
 $nav-height: 90px;
 $nav-logo-height: 30px;
-$text-big: 24px;
 
 .pnav-bar {
-	z-index: 1;
+	background-color: $white;
+	box-shadow: 0px 1px 5px $grey;
+	display: flex;
+	align-items: center;
   position: fixed;
   width: 100%;
+	z-index: 1;
 }
 
 .nav-bar {
-	align-items: center;
-	background-color: white;
-	box-shadow:0px 1px 5px $grey;
-	display: flex;
 	font-size: $text-big;
 	height: $nav-height;
-	justify-content: space-between;
-  flex-flow: row;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	width: 100%;
 }
 
-.nav-bar::before {
-	content: url(../assets/wolox_logo.svg);
+.nav-bar-logo {
   height: $nav-logo-height;
   width: 200px;
 }
