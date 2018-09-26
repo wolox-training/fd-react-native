@@ -1,34 +1,31 @@
 @import 'colors';
-$text-big: 24px;
-$text-medium: 16px;
-$text-small: 12px;
+@import 'sizes';
 
 .footer {
-	background-color: $blue;
+  background-color: $blue;
   display: flex;
-
   flex-direction: column;
-	align-content: center;
+  align-content: center;
   height: 200px;
-	width: 100%;
+  width: 100%;
 }
 
 .footer-copyright {
-	padding: 30px;
-	color: white;
-	display: flex;
+  padding: 30px;
+  color: white;
+  display: flex;
   font-size: $text-small;
-	align-self: flex-end;
+  align-self: flex-end;
 }
 
 .footer-title {
-	padding-top: 30px;
+  padding-top: 30px;
   font-size: $text-big;
-	display: flex;
-	color: white;
-	align-self: center;
+  display: flex;
+  color: white;
+  align-self: center;
 }
 
 .footer-image {
-	padding-top: 30px;
+  padding-top: 30px;
 }
