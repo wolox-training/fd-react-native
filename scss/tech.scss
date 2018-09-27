@@ -16,11 +16,10 @@ $tech-logo-size: 100px;
   display: flex;
   flex-direction: column;
   height: 333px;
-  margin: 15px;
   padding: 40px 20px;
   position: relative;
   text-align: center;
-  width: 200px;
+  width: 100%;
 
   &:first-child {
     border-right: 5px solid $green;
