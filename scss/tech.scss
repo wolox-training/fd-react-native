@@ -10,8 +10,8 @@ $tech-logo-size: 100px;
   padding: 0 75px;
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: [col1-start] 20% [col2-start] auto [col3-start] auto [col4-start] auto [col5-start] 20% [col5-end];
-  grid-template-rows: [row1-start] auto [row2-start] auto [row2-end];
+  grid-template-columns: [col1-start] 33% [col2-start] 33% [col3-start] 33% [col3-end];
+  grid-template-rows: [row1-start] 50% [row2-start] 50% [row2-end];
 }
 
 .box {
@@ -25,10 +25,11 @@ $tech-logo-size: 100px;
   position: relative;
   text-align: center;
   width: 200px;
+  grid-column: col2-start / col3-end;
+  grid-row: row1-start / row2-end;
 
   &:first-child {
-    grid-column: col2-start / col5-start;
-    grid-row: row1-start / row2-end;
+    grid-column: col1-start / col2-start;
   }
 }
 
