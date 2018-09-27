@@ -8,11 +8,15 @@ $tech-logo-size: 100px;
   flex-wrap: wrap;
   margin-bottom: 70px;
   padding: 0 75px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: [col1-start] 20% [col2-start] auto [col3-start] auto [col4-start] auto [col5-start] 20% [col5-end];
+  grid-template-rows: [row1-start] auto [row2-start] auto [row2-end];
 }
 
 .box {
   align-items: center;
-  background: $green;
+  //background: $green;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -23,7 +27,7 @@ $tech-logo-size: 100px;
   text-align: center;
   width: 200px;
 
-  &::before {
+  /*&::before {
     border: 1px solid $green;
     border-radius: 8px;
     right: 10px;
@@ -39,7 +43,24 @@ $tech-logo-size: 100px;
   &:hover::before {
     bottom: -10px;
     right: -10px;
-  }
+  }*/
+}
+
+.first-box{
+  align-items: center;
+  //background: $green;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  min-height: 310px;
+  margin: 15px;
+  padding: 40px 20px;
+  position: relative;
+  text-align: center;
+  width: 200px;
+  align-self: center;
+  grid-column: col2-start / col5-start;
+  grid-row: row1-start / row2-end;
 }
 
 .box-title {
