@@ -5,26 +5,21 @@
   background-color: $blue;
   display: flex;
   flex-direction: column;
-  align-content: center;
-  height: 200px;
-  width: 100%;
+  align-items: center;
+  padding-top: 25px;
 }
 
 .footer-copyright {
-  padding-top: 30px;
-  color: white;
-  display: flex;
+  margin-bottom: 30px;
+  color: $white;
   font-size: $text-small;
   align-self: flex-end;
 }
 
 .footer-title {
-  padding-top: 25px;
+  margin-bottom: 20px;
   font-size: $text-big;
-  color: white;
+  color: $white;
   align-self: center;
-}
-
-.footer-image {
-  padding-top: 30px;
+  text-transform: uppercase;
 }
