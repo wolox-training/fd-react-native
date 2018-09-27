@@ -21,3 +21,9 @@ $nav-logo-height: 30px;
   height: $nav-logo-height;
   width: 200px;
 }
+
+@media only screen and (max-width: 1024px) {
+  .nav-bar-text{
+    display: none;
+  }
+}
