@@ -23,8 +23,8 @@ $nav-logo-height: 30px;
   width: 200px;
 }
 
-  @media only screen and (max-width: 1024px) {
-  .nav-bar-text{
+@media only screen and (max-width: 1024px) {
+  .nav-bar-text {
     display: none;
   }
 }
