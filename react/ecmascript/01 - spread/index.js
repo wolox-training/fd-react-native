@@ -6,5 +6,13 @@ export function min() {
 }
 
 export function copy() {
+  isArray();
+}
 
+export function reverseMerge() {
+  isArray();
+}
+
+export function filterAttribs() {
+  isArray();
 }
