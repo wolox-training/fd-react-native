@@ -1,18 +1,15 @@
 import { isArray } from './utils';
 
-export function min() {
-  isArray();
-  return Math.min();
+export default function min(arg) {
+  if (isArray(arg)) {
+    return Math.min();
+  } else if (arg === undefined) {
+    // empty
+  } return arg;
 }
 
-export function copy() {
-  isArray();
-}
-
-export function reverseMerge() {
-  isArray();
-}
-
-export function filterAttribs() {
-  isArray();
+export function copy(arg) {
+  if (isArray(arg)) {
+    return arg;
+  }
 }
