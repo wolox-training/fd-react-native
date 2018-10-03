@@ -7,6 +7,7 @@ $nav-logo-height: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
   position: fixed;
   height: 100px;
   width: 100%;
@@ -20,4 +21,10 @@ $nav-logo-height: 30px;
 .nav-bar-logo {
   height: $nav-logo-height;
   width: 200px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .nav-bar-text {
+    display: none;
+  }
 }
