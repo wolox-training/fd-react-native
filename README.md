@@ -1,1 +1,0 @@
-# fd-react-native
