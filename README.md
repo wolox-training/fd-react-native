@@ -1,1 +1,2 @@
-# fd-react-native
+# finger-exercises
+Finger exercises that complements trainings.
