@@ -1,16 +1,12 @@
 import { isArray } from './utils';
 
-export function min(arg) {
-  if (arguments.length === 1) {
-    if (isArray(arg)) {
-      return Math.min(...arg);
-    }
-    return Math.min(arg);
-  } else if (arguments.length > 1) {
-    const args = [...arguments];
-    return Math.min(...args);
+export function min(...arg) {
+  if (arg[0] === undefined) {
+    return undefined;
+  } else if (isArray(arg[0])) {
+    return Math.min(...arg[0]);
   }
-  return undefined;
+  return Math.min(...arg);
 }
 
 export function copy(args) {
