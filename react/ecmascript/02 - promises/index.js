@@ -1,9 +1,16 @@
-// Hint: use setInterval, create a new Promise and measure time with Date.now()
-
-export function delay() {
-
+export function delay(TIME) {
+  const start = Date.now();
+  const reason = new Error('This time is too much !');
+  return new Promise((resolve, reject) => {
+    if (TIME > 500) {
+      reject(reason);
+    } else {
+      setInterval(() => {
+        const delayedTime = Date.now() - start;
+        resolve(delayedTime);
+      }, TIME);
+    }
+  });
 }
 
-export function asyncDelay() {
-
-}
+export const asyncDelay = delay;
