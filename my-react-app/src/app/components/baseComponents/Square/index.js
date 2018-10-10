@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './styles.scss';
 
 function Square({ onClick, value }) {
   return (
@@ -11,7 +10,7 @@ function Square({ onClick, value }) {
 }
 
 Square.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   onClick: PropTypes.func.isRequired
 };
 
