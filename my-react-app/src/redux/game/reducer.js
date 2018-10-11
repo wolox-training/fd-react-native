@@ -31,8 +31,8 @@ function reducer(state = initialState, action) {
     case actions.jumpTo: {
       return {
         history: state.history,
-        stepNumber: state.stepNumber,
-        xIsNext: state.stepNumber % 2 === 0
+        stepNumber: action.stepNumber,
+        xIsNext: state.xIsNext % 2 === 0
       };
     }
     default:

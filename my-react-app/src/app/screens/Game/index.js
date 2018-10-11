@@ -12,8 +12,8 @@ class Game extends Component {
     this.props.dispatch({ type: actions.handleClick, pos: i });
   }
 
-  jumpTo(step) {
-    this.props.dispatch({ type: actions.jumpTo, step });
+  jumpTo(stepNumber) {
+    this.props.dispatch({ type: actions.jumpTo, stepNumber });
   }
 
   render() {
