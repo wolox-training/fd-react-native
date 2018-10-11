@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import Board from '../Board';
 
 import './styles.scss';
 import calculateWinner from './utils.js';
 
-class Game extends React.Component {
+class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -67,11 +67,11 @@ class Game extends React.Component {
     }
 
     return (
-      <div className="game">
-        <div className="game-board">
+      <div className="styles.game">
+        <div className="styles.game-board">
           <Board squares={current.squares} onClick={i => this.handleClick(i)} />
         </div>
-        <div className="game-info">
+        <div className="styles.game-info">
           <div>{status}</div>
           <ol>{moves}</ol>
         </div>
