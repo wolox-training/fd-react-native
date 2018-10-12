@@ -4,6 +4,6 @@ function calculateWinner(squares) {
   const winnerLine = lines.find(
     ([a, b, c]) => squares[a] && squares[a] === squares[b] && squares[a] === squares[c]
   );
-  return winnerLine && winnerLine[0];
+  return winnerLine ? squares[winnerLine[0]] : undefined;
 }
 export default calculateWinner;
