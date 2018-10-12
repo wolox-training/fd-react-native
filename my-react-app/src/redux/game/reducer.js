@@ -1,4 +1,4 @@
-import calculateWinner from '../../app/components/baseComponents/Game/utils';
+import calculateWinner from '../../app/screens/Game/utils';
 
 import { actions } from './actions';
 
@@ -32,7 +32,7 @@ function reducer(state = initialState, action) {
       return {
         history: state.history,
         stepNumber: action.stepNumber,
-        xIsNext: state.xIsNext % 2 === 0
+        xIsNext: state.stepNumber % 2 === 0
       };
     }
     default:
