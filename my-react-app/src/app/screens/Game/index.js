@@ -2,20 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { actions } from '../../../redux/game/actions';
-
+import { actionCreators } from '../../../redux/game/actions';
 import Board from './components/Board';
 import styles from './styles.scss';
 import calculateWinner from './utils.js';
 
 class Game extends Component {
-  handleClick(i) {
-    this.props.dispatch({ type: actions.handleClick, pos: i });
-  }
-
-  jumpTo(stepNumber) {
-    this.props.dispatch({ type: actions.jumpTo, stepNumber });
-  }
-
   render() {
     const history = this.props.history;
     const current = history[this.props.stepNumber];
@@ -25,7 +17,7 @@ class Game extends Component {
       const desc = move ? `Go to move #${move}` : 'Go to game start';
       return (
         <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <button onClick={() => this.props.jumpTo(move)}>{desc}</button>
         </li>
       );
     });
@@ -40,7 +32,7 @@ class Game extends Component {
     return (
       <div className={styles.game}>
         <div className={styles.gameBoard}>
-          <Board squares={current.squares} onClick={i => this.handleClick(i)} />
+          <Board squares={current.squares} onClick={i => this.props.handleClick(i)} />
         </div>
         <div className={styles.gameInfo}>
           <div>{status}</div>
@@ -57,4 +49,17 @@ const mapStateToProps = state => ({
   xIsNext: state.xIsNext
 });
 
-export default connect(mapStateToProps)(Game);
+const mapDispatchToProps = dispatch => ({
+  handleClick: i => {
+    dispatch(actionCreators.handleClickCreator(i));
+  },
+
+  jumpTo: stepNumber => {
+    dispatch(actionCreators.jumpTo(stepNumber));
+  }
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Game);
