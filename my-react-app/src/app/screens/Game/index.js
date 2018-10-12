@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
-import Board from '../Board';
-
-import './styles.scss';
+import Board from './components/Board';
+import styles from './styles.scss';
 import calculateWinner from './utils.js';
 
 class Game extends Component {
@@ -67,11 +66,11 @@ class Game extends Component {
     }
 
     return (
-      <div className="styles.game">
-        <div className="styles.game-board">
+      <div className={styles.game}>
+        <div className={styles.gameboard}>
           <Board squares={current.squares} onClick={i => this.handleClick(i)} />
         </div>
-        <div className="styles.game-info">
+        <div className={styles.gameinfo}>
           <div>{status}</div>
           <ol>{moves}</ol>
         </div>
