@@ -61,11 +61,11 @@ const mapDispatchToProps = dispatch => ({
 });
 
 Game.propTypes = {
-  history: PropTypes.arrayOf(PropTypes.object),
-  stepNumber: PropTypes.number,
-  jumpTo: PropTypes.func,
-  handleClick: PropTypes.func,
-  xIsNext: PropTypes.bool
+  history: PropTypes.arrayOf(PropTypes.shape({ squares: PropTypes.arrayOf(PropTypes.string) })).isRequired,
+  stepNumber: PropTypes.number.isRequired,
+  jumpTo: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
+  xIsNext: PropTypes.bool.isRequired
 };
 
 export default connect(
