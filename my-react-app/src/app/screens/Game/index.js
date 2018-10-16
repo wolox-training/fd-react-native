@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { actionCreators } from '../../../redux/game/actions';
 
@@ -58,6 +59,14 @@ const mapDispatchToProps = dispatch => ({
     dispatch(actionCreators.jumpToCreator(stepNumber));
   }
 });
+
+Game.propTypes = {
+  history: PropTypes.arrayOf(PropTypes.object),
+  stepNumber: PropTypes.number,
+  jumpTo: PropTypes.func,
+  handleClick: PropTypes.func,
+  xIsNext: PropTypes.bool
+};
 
 export default connect(
   mapStateToProps,
