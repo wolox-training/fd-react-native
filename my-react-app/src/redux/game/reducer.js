@@ -30,7 +30,7 @@ function reducer(state = initialState, action) {
     }
     case actions.JUMP_TO: {
       return {
-        history: state.history,
+        ...state,
         stepNumber: action.payload.stepNumber,
         xIsNext: state.stepNumber % 2 === 0
       };
