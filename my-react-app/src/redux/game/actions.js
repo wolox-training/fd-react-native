@@ -1,12 +1,12 @@
 export const actions = {
-  handleClick: 'HANDLE_CLICK',
-  jumpTo: 'JUMP_TO'
+  HANDLE_CLICK: 'HANDLE_CLICK',
+  JUMP_TO: 'JUMP_TO'
 };
 
 export const actionCreators = {
   handleClickCreator(i) {
     return {
-      type: actions.handleClick,
+      type: actions.HANDLE_CLICK,
       payload: {
         i
       }
@@ -14,7 +14,7 @@ export const actionCreators = {
   },
   jumpToCreator(stepNumber) {
     return {
-      type: actions.handleClick,
+      type: actions.JUMP_TO,
       payload: {
         stepNumber
       }

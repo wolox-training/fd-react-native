@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { actions } from '../../../redux/game/actions';
 import { actionCreators } from '../../../redux/game/actions';
+
 import Board from './components/Board';
 import styles from './styles.scss';
 import calculateWinner from './utils.js';
@@ -55,7 +55,7 @@ const mapDispatchToProps = dispatch => ({
   },
 
   jumpTo: stepNumber => {
-    dispatch(actionCreators.jumpTo(stepNumber));
+    dispatch(actionCreators.jumpToCreator(stepNumber));
   }
 });
 
