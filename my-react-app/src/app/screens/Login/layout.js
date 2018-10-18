@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import PropTypes from 'prop-types';
 
-import { CustomInput } from './components/Fields/customInput.js';
+import { EMAIL_FIELD, PASSWORD_FIELD } from './fieldNames.js';
+import { FORM_NAME } from './fieldForm.js'
+import { CustomInput } from './components/CustomInput/index.js';
 import { required, minLength } from './utils.js';
 
 class LoginForm extends Component {
@@ -9,9 +12,9 @@ class LoginForm extends Component {
     const { handleSubmit } = this.props;
     return (
       <form onSubmit={handleSubmit}>
-        <Field name="name" type="email" component={CustomInput} validate={required} label="Email" />
+        <Field name={EMAIL_FIELD} type="email" component={CustomInput} validate={required} label="Email" />
         <Field
-          name="password"
+          name={PASSWORD_FIELD}
           type="password"
           component={CustomInput}
           validate={[required, minLength]}
@@ -24,7 +27,11 @@ class LoginForm extends Component {
 }
 
 LoginForm = reduxForm({
-  form: 'Login'
+  form: { FORM_NAME }
 })(LoginForm);
+
+LoginForm.propTypes = {
+  handleSubmit: PropTypes.func
+};
 
 export default LoginForm;
