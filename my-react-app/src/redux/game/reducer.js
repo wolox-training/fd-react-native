@@ -8,7 +8,7 @@ const initialState = {
   xIsNext: true
 };
 
-function reducer(state = initialState, action) {
+export function reducer(state = initialState, action) {
   switch (action.type) {
     case actions.HANDLE_CLICK: {
       const history = state.history.slice(0, state.stepNumber + 1);
@@ -39,5 +39,3 @@ function reducer(state = initialState, action) {
       return state;
   }
 }
-
-export default reducer;
