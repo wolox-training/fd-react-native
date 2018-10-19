@@ -13,7 +13,7 @@ class LoginForm extends Component {
       <form onSubmit={handleSubmit}>
         <Field
           name={FORM_FIELDS.EMAIL_FIELD}
-          type="email"
+          type="text"
           component={CustomInput}
           validate={userValidation}
           label="Email"
