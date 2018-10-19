@@ -31,12 +31,10 @@ class LoginForm extends Component {
   }
 }
 
-LoginForm = reduxForm({
-  form: FORM_FIELDS.FORM_NAME
-})(LoginForm);
-
 LoginForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired
 };
 
-export default LoginForm;
+export default reduxForm({
+  form: FORM_FIELDS.FORM_NAME
+})(LoginForm);
