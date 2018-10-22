@@ -4,3 +4,4 @@ scss/application.css
 scss/application.map
 scss/application.css.map
 .sass-cache/
+.env
