@@ -28,7 +28,7 @@ class Game extends Component {
       status = `Next player: ${this.props.xIsNext ? 'X' : 'O'}`;
     }
 
-    return <Game onSubmit={this.mov} />;
+    return <Game onMoves={this.moves} />;
   }
 }
 
