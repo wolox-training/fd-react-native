@@ -9,7 +9,7 @@ class LoginFormContainer extends Component {
   handleSubmit = async values => {
     const response = await loginService.login(values);
     if (response.ok) {
-      setAuthorizationHeader({ token: JSON.stringify(response.data.token) });
+      setAuthorizationHeader(response.data.token);
     } else {
       alert('Invalid password');
     }
