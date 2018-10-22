@@ -5,7 +5,7 @@ const api = create({
   timeout: 5000
 });
 
-export function setHeader(token) {
+export function setAuthorizationHeader(token) {
   api.setHeader('Authorization', token);
 }
 
