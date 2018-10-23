@@ -5,11 +5,11 @@ import { Provider } from 'react-redux';
 import store from './redux/store.js';
 import './scss/index.scss';
 import registerServiceWorker from './registerServiceWorker';
-import LoginFormContainer from './app/screens/Login/index.js';
+import AppRoutes from './config/routes';
 
 ReactDOM.render(
   <Provider store={store}>
-    <LoginFormContainer />
+    <AppRoutes />
   </Provider>,
   document.getElementById('root')
 );

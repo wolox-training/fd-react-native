@@ -6,8 +6,8 @@ import { reducer as game } from './game/reducer';
 import { reducer as login } from './login/reducer';
 
 const reducers = {
-  game,
   form: formReducer,
+  game,
   login
 };
 

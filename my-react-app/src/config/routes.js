@@ -1,8 +1,8 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import Game from '../app/components/Game';
-import Login from '../app/components/Login';
+import Game from '../app/screens/Game';
+import Login from '../app/screens/Login';
 
 export const routes = {
   GAME: '/game',
@@ -11,10 +11,12 @@ export const routes = {
 
 function AppRoutes() {
   return (
-    <Switch>
-      <Route exact path={routes.LOGIN} component={Login} />
-      <Route path={routes.GAME} component={Game} />
-    </Switch>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path={routes.LOGIN} component={Login} />
+        <Route path={routes.GAME} component={Game} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 export default AppRoutes;
