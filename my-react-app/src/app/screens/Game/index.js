@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 
 import { actionCreators } from '../../../redux/game/actions';
 
+import Game from './layout.js';
 import calculateWinner from './utils.js';
 
-class Game extends Component {
+class GameContainer extends Component {
   render() {
     const history = this.props.history;
     const current = history[this.props.stepNumber];
@@ -58,4 +59,4 @@ Game.propTypes = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Game);
+)(GameContainer);
