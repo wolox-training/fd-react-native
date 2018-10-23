@@ -2,11 +2,13 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import thunk from 'redux-thunk';
 
-import { reducer as login } from './game/reducer';
+import { reducer as game } from './game/reducer';
+import { reducer as login } from './login/reducer';
 
 const reducers = {
-  login,
-  form: formReducer
+  game,
+  form: formReducer,
+  login
 };
 
 const reducer = combineReducers(reducers);
