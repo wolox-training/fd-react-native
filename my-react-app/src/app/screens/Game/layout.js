@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { reduxForm } from 'redux-form';
 
 import Board from './components/Board';
 import styles from './styles.scss';
 
-function Game({ moves }) {
+export function Game({ moves }) {
   const current = history[this.props.stepNumber];
   return (
     <form onMoves={moves}>
@@ -24,3 +25,5 @@ function Game({ moves }) {
 Game.propTypes = {
   moves: PropTypes.func.isRequired
 };
+
+export default reduxForm({})(Game);
