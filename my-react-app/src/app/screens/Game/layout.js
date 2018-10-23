@@ -5,8 +5,8 @@ import { reduxForm } from 'redux-form';
 import Board from './components/Board';
 import styles from './styles.scss';
 
-export function Game({ moves }) {
-  const current = history[this.props.stepNumber];
+function Game({ moves, history, stepNumber }) {
+  const current = history[stepNumber];
   return (
     <form onMoves={moves}>
       <div className={styles.game}>
@@ -23,7 +23,9 @@ export function Game({ moves }) {
 }
 
 Game.propTypes = {
-  moves: PropTypes.func.isRequired
+  moves: PropTypes.func.isRequired,
+  history: PropTypes.arrayOf(PropTypes.shape({ squares: PropTypes.arrayOf(PropTypes.string) })).isRequired,
+  stepNumber: PropTypes.number.isRequired
 };
 
 export default reduxForm({})(Game);

@@ -49,7 +49,7 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-Game.propTypes = {
+GameContainer.propTypes = {
   history: PropTypes.arrayOf(PropTypes.shape({ squares: PropTypes.arrayOf(PropTypes.string) })).isRequired,
   stepNumber: PropTypes.number.isRequired,
   jumpTo: PropTypes.func.isRequired,
