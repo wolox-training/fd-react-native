@@ -1,17 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { reduxForm } from 'redux-form';
 
 import Board from './components/Board';
 import styles from './styles.scss';
 
-function Game({ moves, history, stepNumber }) {
-  const current = history[stepNumber];
+function Game({ squares, status, moves, onClick }) {
   return (
     <form onMoves={moves}>
       <div className={styles.game}>
         <div className={styles.gameBoard}>
-          <Board squares={current.squares} onClick={this.props.handleClick} />
+          <Board squares={squares} onClick={onClick} />
         </div>
         <div className={styles.gameInfo}>
           <div>{status}</div>
@@ -24,8 +22,9 @@ function Game({ moves, history, stepNumber }) {
 
 Game.propTypes = {
   moves: PropTypes.func.isRequired,
-  history: PropTypes.arrayOf(PropTypes.shape({ squares: PropTypes.arrayOf(PropTypes.string) })).isRequired,
-  stepNumber: PropTypes.number.isRequired
+  squares: PropTypes.arrayOf(PropTypes.string),
+  status: PropTypes.string,
+  onClick: PropTypes.func.isRequired
 };
 
-export default reduxForm({})(Game);
+export default Game;

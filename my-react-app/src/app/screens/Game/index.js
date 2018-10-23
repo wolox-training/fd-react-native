@@ -8,6 +8,16 @@ import Game from './layout.js';
 import calculateWinner from './utils.js';
 
 class GameContainer extends Component {
+  handleClick = i => {
+    const history = this.props.history.slice(0, this.props.stepNumber + 1);
+    const current = history[history.length - 1];
+    const squares = current.squares.slice();
+    if (calculateWinner(squares) || squares[i]) {
+      return;
+    }
+    this.props.handleClick(i);
+  };
+
   render() {
     const history = this.props.history;
     const current = history[this.props.stepNumber];
@@ -29,7 +39,7 @@ class GameContainer extends Component {
       status = `Next player: ${this.props.xIsNext ? 'X' : 'O'}`;
     }
 
-    return <Game onMoves={this.moves} />;
+    return <Game squares={current.squares} status={status} moves={moves} onClick={this.handleClick} />;
   }
 }
 
@@ -53,7 +63,8 @@ GameContainer.propTypes = {
   history: PropTypes.arrayOf(PropTypes.shape({ squares: PropTypes.arrayOf(PropTypes.string) })).isRequired,
   stepNumber: PropTypes.number.isRequired,
   jumpTo: PropTypes.func.isRequired,
-  xIsNext: PropTypes.bool.isRequired
+  xIsNext: PropTypes.bool.isRequired,
+  handleClick: PropTypes.func.isRequired
 };
 
 export default connect(
