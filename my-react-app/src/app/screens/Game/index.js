@@ -11,7 +11,7 @@ class GameContainer extends Component {
   handleClick = i => {
     const history = this.props.history.slice(0, this.props.stepNumber + 1);
     const current = history[history.length - 1];
-    const squares = current.squares.slice();
+    const squares = current.squares;
     if (calculateWinner(squares) || squares[i]) {
       return;
     }

@@ -6,22 +6,20 @@ import styles from './styles.scss';
 
 function Game({ squares, status, moves, onClick }) {
   return (
-    <form onMoves={moves}>
-      <div className={styles.game}>
-        <div className={styles.gameBoard}>
-          <Board squares={squares} onClick={onClick} />
-        </div>
-        <div className={styles.gameInfo}>
-          <div>{status}</div>
-          <ol>{moves}</ol>
-        </div>
+    <div className={styles.game}>
+      <div className={styles.gameBoard}>
+        <Board squares={squares} onClick={onClick} />
       </div>
-    </form>
+      <div className={styles.gameInfo}>
+        <div>{status}</div>
+        <ol>{moves}</ol>
+      </div>
+    </div>
   );
 }
 
 Game.propTypes = {
-  moves: PropTypes.func.isRequired,
+  moves: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number.isRequired)).isRequired,
   squares: PropTypes.arrayOf(PropTypes.string),
   status: PropTypes.string,
   onClick: PropTypes.func.isRequired
