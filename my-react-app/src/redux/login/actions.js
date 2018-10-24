@@ -13,13 +13,11 @@ const actionCreators = {
     if (response.ok) {
       dispatch({
         type: actions.GET_TOKEN_SUCCESS,
-        payload: response.data
+        payload: {token: response.data, email: response.data }
       });
     } else {
-      if (response.data.emailInvalid) {
-        alert('Invalid email');
-      } else if (response.data.passwordInvalid) {
-        alert('Invalid password');
+      if (response.data.error) {
+        alert('Error');
       }
       dispatch({
         type: actions.GET_TOKEN_FAILURE,
