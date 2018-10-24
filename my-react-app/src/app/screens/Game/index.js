@@ -4,11 +4,20 @@ import PropTypes from 'prop-types';
 
 import { actionCreators } from '../../../redux/game/actions';
 
-import Board from './components/Board';
-import styles from './styles.scss';
+import Game from './layout.js';
 import calculateWinner from './utils.js';
 
-class Game extends Component {
+class GameContainer extends Component {
+  handleClick = i => {
+    const history = this.props.history.slice(0, this.props.stepNumber + 1);
+    const current = history[history.length - 1];
+    const squares = current.squares;
+    if (calculateWinner(squares) || squares[i]) {
+      return;
+    }
+    this.props.handleClick(i);
+  };
+
   render() {
     const history = this.props.history;
     const current = history[this.props.stepNumber];
@@ -30,17 +39,7 @@ class Game extends Component {
       status = `Next player: ${this.props.xIsNext ? 'X' : 'O'}`;
     }
 
-    return (
-      <div className={styles.game}>
-        <div className={styles.gameBoard}>
-          <Board squares={current.squares} onClick={i => this.props.handleClick(i)} />
-        </div>
-        <div className={styles.gameInfo}>
-          <div>{status}</div>
-          <ol>{moves}</ol>
-        </div>
-      </div>
-    );
+    return <Game squares={current.squares} status={status} moves={moves} onClick={this.handleClick} />;
   }
 }
 
@@ -60,15 +59,15 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-Game.propTypes = {
+GameContainer.propTypes = {
   history: PropTypes.arrayOf(PropTypes.shape({ squares: PropTypes.arrayOf(PropTypes.string) })).isRequired,
   stepNumber: PropTypes.number.isRequired,
   jumpTo: PropTypes.func.isRequired,
-  handleClick: PropTypes.func.isRequired,
-  xIsNext: PropTypes.bool.isRequired
+  xIsNext: PropTypes.bool.isRequired,
+  handleClick: PropTypes.func.isRequired
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Game);
+)(GameContainer);
