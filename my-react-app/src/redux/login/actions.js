@@ -15,6 +15,7 @@ const actionCreators = {
         type: actions.GET_TOKEN_SUCCESS,
         payload: { token: response.data.token, email: credentials.email }
       });
+      history.push('/game');
     } else {
       alert('Error');
       dispatch({
