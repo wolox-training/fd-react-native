@@ -7,14 +7,13 @@ import actionCreators from '../../../redux/login/actions.js';
 import LoginForm from './layout.js';
 
 class LoginFormContainer extends Component {
-  handleSubmit = async values => this.props.login(values);
   render() {
-    return <LoginForm onSubmit={this.handleSubmit} />;
+    return <LoginForm onSubmit={this.props.login} />;
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  login: credentials => dispatch(actionCreators.login(credentials))
+  onSubmit: credentials => dispatch(actionCreators.login(credentials))
 });
 
 LoginFormContainer.propTypes = {
@@ -24,4 +23,4 @@ LoginFormContainer.propTypes = {
 export default connect(
   null,
   mapDispatchToProps
-)(LoginFormContainer);
+)(LoginForm);

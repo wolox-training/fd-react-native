@@ -16,6 +16,7 @@ const actionCreators = {
         payload: { token: response.data.token, email: credentials.email }
       });
     } else {
+      alert('Error');
       dispatch({
         type: actions.GET_TOKEN_FAILURE,
         payload: response.problem
