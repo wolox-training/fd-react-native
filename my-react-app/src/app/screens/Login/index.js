@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-import loginService from '../../../services/loginService.js';
-import { setAuthorizationHeader } from '../../../config/api.js';
 import actionCreators from '../../../redux/login/actions.js';
 
 import LoginForm from './layout.js';
 
 class LoginFormContainer extends Component {
-  handleSubmit = async values => {
-    const response = await loginService.login(values);
-    if (response.ok) {
-      setAuthorizationHeader(response.data.token);
-    } else {
-      alert('Invalid password');
-    }
-  };
+  handleSubmit = async values => this.props.login(values);
   render() {
     return <LoginForm onSubmit={this.handleSubmit} />;
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  login: credentials =>
-    dispatch(actionCreators.login({ email: credentials.email, password: credentials.password }))
+  login: credentials => dispatch(actionCreators.login(credentials))
 });
 
-export default connect(mapDispatchToProps)(LoginFormContainer);
+LoginFormContainer.propTypes = {
+  login: PropTypes.func.isRequired
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(LoginFormContainer);

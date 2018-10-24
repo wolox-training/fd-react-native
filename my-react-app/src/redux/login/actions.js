@@ -13,12 +13,9 @@ const actionCreators = {
     if (response.ok) {
       dispatch({
         type: actions.GET_TOKEN_SUCCESS,
-        payload: { token: response.data, email: response.data }
+        payload: { token: response.data.token, email: credentials.email }
       });
     } else {
-      if (response.data.error) {
-        alert('Error');
-      }
       dispatch({
         type: actions.GET_TOKEN_FAILURE,
         payload: response.problem

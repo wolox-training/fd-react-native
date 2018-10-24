@@ -9,9 +9,7 @@ const initialState = {
 export function reducerLogin(state = initialState, action) {
   switch (action.type) {
     case actions.GET_TOKEN:
-      return {
-        ...state
-      };
+      return state;
     case actions.GET_TOKEN_SUCCESS:
       return {
         ...state,
@@ -20,6 +18,7 @@ export function reducerLogin(state = initialState, action) {
       };
     case actions.GET_TOKEN_FAILURE:
       return {
+        error: true,
         ...state
       };
     default:
