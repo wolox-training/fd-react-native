@@ -13,7 +13,7 @@ const actionCreators = {
     if (response.ok) {
       dispatch({
         type: actions.GET_TOKEN_SUCCESS,
-        payload: {token: response.data, email: response.data }
+        payload: { token: response.data, email: response.data }
       });
     } else {
       if (response.data.error) {
