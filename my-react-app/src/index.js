@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store.js';
 import './scss/index.scss';
 import registerServiceWorker from './registerServiceWorker';
-import AppRoutes from './config/routes';
+import AppRoutes from './app/components/Navigator';
 
 ReactDOM.render(
   <Provider store={store}>

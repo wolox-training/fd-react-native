@@ -2,14 +2,10 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
 
-import { history } from '../redux/store';
-import Game from '../app/screens/Game';
-import Login from '../app/screens/Login';
-
-export const routes = {
-  GAME: '/game',
-  LOGIN: '/'
-};
+import { history } from '../../../redux/store';
+import Game from '../../screens/Game';
+import Login from '../../screens/Login';
+import { routes } from '../../../constants/routes';
 
 function AppRoutes() {
   return (
