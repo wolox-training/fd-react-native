@@ -1,4 +1,5 @@
 import loginService from '../../services/loginService';
+import { history } from '../store';
 
 export const actions = {
   GET_TOKEN: 'GET_TOKEN',

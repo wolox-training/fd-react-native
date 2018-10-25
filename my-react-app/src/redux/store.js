@@ -13,8 +13,8 @@ const middleware = routerMiddleware(history);
 
 const rootReducer = combineReducers({
   login,
-  game,
-  form: formReducer
+  form: formReducer,
+  game
 });
 
 export default createStore(rootReducer, applyMiddleware(thunk, middleware));
