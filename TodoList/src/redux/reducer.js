@@ -1,9 +1,6 @@
 const types = {
 }
 
-export const actionCreators = {
-}
-
 const initialState = {
   items: [],
 }
