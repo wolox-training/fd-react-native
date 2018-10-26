@@ -6,7 +6,7 @@ const initialState = {
   error: false
 };
 
-export function reducerLogin(state = initialState, action) {
+export function reducer(state = initialState, action) {
   switch (action.type) {
     case actions.GET_TOKEN:
       return state;

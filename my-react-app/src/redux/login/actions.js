@@ -1,4 +1,5 @@
 import loginService from '../../services/loginService';
+import { history } from '../store';
 
 export const actions = {
   GET_TOKEN: 'GET_TOKEN',
@@ -15,6 +16,7 @@ const actionCreators = {
         type: actions.GET_TOKEN_SUCCESS,
         payload: { token: response.data.token, email: credentials.email }
       });
+      history.push('/game');
     } else {
       alert('Error');
       dispatch({
