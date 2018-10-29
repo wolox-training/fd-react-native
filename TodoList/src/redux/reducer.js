@@ -1,24 +1,24 @@
-import { actions } from './actions';
+import { types } from './actions.js'
 
 const initialState = {
-  items: [],
+  items: []
 }
 
 export const reducer = (state = initialState, action) => {
-  const {type, payload} = action
-  const {items} = state
+  const { type, payload } = action
+  const { items } = state
 
-  switch(type) {
+  switch (type) {
     case types.ADD_ITEM: {
       return {
         ...state,
-        items: [{label: payload, completed: false}, ...items],
+        items: [{ label: payload, completed: false }, ...items]
       }
     }
     case types.REMOVE_ITEM: {
       return {
         ...state,
-        items: items.filter((item, i) => i !== payload),
+        items: items.filter((item, i) => i !== payload)
       }
     }
     case types.TOGGLE_ITEM: {
@@ -26,10 +26,10 @@ export const reducer = (state = initialState, action) => {
         ...state,
         items: items.map((item, i) => {
           if (i === payload) {
-            return {label: item.label, completed: !item.completed}
+            return { label: item.label, completed: !item.completed }
           }
           return item
-        }),
+        })
       }
     }
     case types.REMOVE_COMPLETED: {

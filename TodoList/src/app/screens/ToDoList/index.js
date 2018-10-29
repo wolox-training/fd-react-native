@@ -8,42 +8,31 @@ import { actionCreators } from '../../../redux/actions'
 import Title from '../Title'
 import Footer from '../Footer'
 import List from '../List'
-//import Checkbox from '../components/Checkbox'
-//import Input from '../components/Input'
-import styles from './styles.js'
-
-
-const mapStateToProps = (state) => ({
-  items: state.items,
-})
+import Input from '../Input'
+import { styles } from './styles.js'
 
 class ToDoApp extends Component {
-
-  static propTypes = {
-    items: PropTypes.array.isRequired,
-    dispatch: PropTypes.func.isRequired,
-  }
     addItem = (item) => {
     const {dispatch} = this.props
     dispatch(actionCreators.addItem(item))
   }
-
   removeItem = (index) => {
     const {dispatch} = this.props
     dispatch(actionCreators.removeItem(index))
   }
-
   toggleItem = (index) => {
     const {dispatch} = this.props
     dispatch(actionCreators.toggleItem(index))
   }
-
   removeCompleted = () => {
     const {dispatch} = this.props
     dispatch(actionCreators.removeCompleted())
   }
+  
 render() {
+  const {items} = this.props
   return (
+    <View style={styles.container}>
       <Title> Todo List </Title>
         <Input
           placeholder={'Enter an item!'}
@@ -61,5 +50,14 @@ render() {
     )
   }
 }
+
+ToDoApp.propTypes = {
+  items: PropTypes.array.isRequired,
+  dispatch: PropTypes.func.isRequired,
+}
+
+const mapStateToProps = (state) => ({
+  items: state.items,
+})
 
 export default connect(mapStateToProps)(ToDoApp)

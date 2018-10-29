@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 export const styles = StyleSheet.create({
   container: {
     borderBottomWidth: 1,
-    borderColor: "gainsboro"
+    borderColor: 'gainsboro'
   },
   item: {
     padding: 10,
@@ -11,16 +11,16 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center'
   },
-  rightSection: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  remove: {
+  removed: {
     marginLeft: 10,
     marginBottom: 2,
-    fontSize: 20,
+    fontSize: 20
   },
   completed: {
-    backgroundColor: 'whitesmoke',
+    backgroundColor: 'whitesmoke'
   },
+  section: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  }
 })

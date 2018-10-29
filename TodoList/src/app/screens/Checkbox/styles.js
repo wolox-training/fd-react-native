@@ -1,12 +1,13 @@
 import { StyleSheet } from 'react-native'
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   box: {
     height: 20,
     width: 20,
+    borderWidth: 1
   },
-  check: {
+  inner: {
     flex: 1,
-    margin: 2,
-  },
+    backgroundColor: 'black'
+  }
 })

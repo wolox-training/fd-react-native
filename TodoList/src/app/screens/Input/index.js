@@ -1,28 +1,17 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import { TextInput } from 'react-native'
-import styles from './styles.js'
+import { styles } from './styles.js'
 
 export default class Input extends Component {
-
-  static propTypes = {
-    onSubmit: PropTypes.func,
-    placeholder: PropTypes.string,
-  }
-
-  state = {
-    text: '',
-  }
-
+  state = { text: '',  }
   onChangeText = (text) => {
     this.setState({text})
   }
-
   onSubmitEditing = () => {
     const {onSubmit} = this.props
     const {text} = this.state
-
     if (!text) return
-
     onSubmit(text)
     this.setState({text: ''})
   }
@@ -42,4 +31,9 @@ export default class Input extends Component {
       />
     )
   }
+}
+
+Input.propTypes = {
+  onSubmit: PropTypes.func,
+  placeholder: PropTypes.string,
 }
