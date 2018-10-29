@@ -10,12 +10,8 @@ import Footer from '../Footer'
 import List from '../List'
 //import Checkbox from '../components/Checkbox'
 //import Input from '../components/Input'
+import styles from './styles.js'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-})
 
 const mapStateToProps = (state) => ({
   items: state.items,

@@ -1,12 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import { TextInput, StyleSheet } from 'react-native'
-
-const styles = StyleSheet.create({
-  input: {
-    height: 40,
-    padding: 15,
-  },
-})
+import { TextInput } from 'react-native'
+import styles from './styles.js'
 
 export default class Input extends Component {
 

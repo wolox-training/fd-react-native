@@ -1,16 +1,6 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
-
-const styles = StyleSheet.create({
-  header: {
-    backgroundColor: 'skyblue',
-    padding: 30,
-  },
-  title: {
-    color: 'white',
-    textAlign: 'center',
-  },
-})
+import { View, Text } from 'react-native'
+import styles from './styles.js'
 
 export default class Title extends Component {
 

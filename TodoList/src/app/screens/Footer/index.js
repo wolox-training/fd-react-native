@@ -1,15 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { TouchableOpacity, Text, StyleSheet } from 'react-native'
-
-const styles = StyleSheet.create({
-  footer: {
-    alignItems: 'center',
-    padding: 25,
-  },
-  remove: {
-    color: 'red'
-  },
-})
+import styles from './styles.js';
 
 export default class Footer extends Component {
 
