@@ -1,11 +1,12 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  footer: {
+    alignItems: 'center',
+    padding: 25,
   },
-  divider: {
-    height: 1,
+  remove: {
+    color: 'red',
   },
 });
 

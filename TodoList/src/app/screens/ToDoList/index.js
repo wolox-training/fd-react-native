@@ -5,10 +5,10 @@ import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux'
 
 import { actionCreators } from '../../../redux/actions'
-import Title from '../Title'
-import Footer from '../Footer'
-import List from '../List'
-import Input from '../Input'
+import Title from '../../components/Title'
+import Footer from '../../components/Footer'
+import List from '../../components/List'
+import Input from '../../components/Input'
 import { styles } from './styles.js'
 
 class ToDoApp extends Component {
@@ -28,25 +28,25 @@ class ToDoApp extends Component {
     const {dispatch} = this.props
     dispatch(actionCreators.removeCompleted())
   }
-  
+
 render() {
   const {items} = this.props
   return (
     <View style={styles.container}>
       <Title> Todo List </Title>
-        <Input
+      <Input
           placeholder={'Enter an item!'}
           onSubmit={this.addItem}
-        />
-        <View style={styles.divider}/>
-        <List
+      />
+      <View style={styles.divider}/>
+      <List
           items={items}
           onRemoveItem={this.removeItem}
           onToggleItemCompleted={this.toggleItem}
-        />
-        <View style={styles.divider} />
-        <Footer onRemoveCompleted={this.removeCompleted} />
-      </View>
+      />
+      <View style={styles.divider} />
+      <Footer onRemoveCompleted={this.removeCompleted} />
+    </View>
     )
   }
 }

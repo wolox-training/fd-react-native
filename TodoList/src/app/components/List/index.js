@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {
   View,
   Text,
-  ScrollView,
+  FlatList,
   StyleSheet,
   TouchableOpacity
 } from 'react-native'
@@ -11,7 +11,7 @@ import {
 import Checkbox from '../Checkbox'
 import { styles } from './styles.js'
 
-export default class List extends Component {
+function List (items) {
   renderItem = (item, i) => {
     const {onToggleItemCompleted, onRemoveItem} = this.props
     const itemStyle = item.completed ? [styles.item, styles.completed] : styles.item
@@ -30,15 +30,11 @@ export default class List extends Component {
       </View>
     )
   }
-
-  render() {
-    const {items} = this.props
     return (
-      <ScrollView style={styles.container}>
+      <FlatList style={styles.container}>
         {items.map(this.renderItem)}
-      </ScrollView>
+      </FlatList>
     )
-  }
 }
 
 List.propTypes = {
@@ -46,3 +42,5 @@ List.propTypes = {
   onRemoveItem: PropTypes.func.isRequired,
   onToggleItemCompleted: PropTypes.func.isRequired,
 }
+
+export default List;

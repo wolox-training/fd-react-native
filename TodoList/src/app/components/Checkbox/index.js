@@ -3,9 +3,7 @@ import PropTypes from 'prop-types'
 import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import { styles } from './styles.js'
 
-export default class Checkbox extends Component {
-  render() {
-    const {onToggle, isChecked} = this.props
+function Checkbox ({onToggle, isChecked}) {
     return (
       <TouchableOpacity onPress={ onToggle }>
         <View style={styles.box}>
@@ -13,10 +11,11 @@ export default class Checkbox extends Component {
         </View>
       </TouchableOpacity>
     )
-  }
 }
 
 Checkbox.propTypes = {
-  onToggle: PropTypes.func,
+  onToggle: PropTypes.func.isRequired,
   isChecked: PropTypes.bool,
 }
+
+export default Checkbox
