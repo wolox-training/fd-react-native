@@ -23,15 +23,40 @@ class ToDoApp extends Component {
     items: PropTypes.array.isRequired,
     dispatch: PropTypes.func.isRequired,
   }
+    addItem = (item) => {
+    const {dispatch} = this.props
+    dispatch(actionCreators.addItem(item))
+  }
 
+  removeItem = (index) => {
+    const {dispatch} = this.props
+    dispatch(actionCreators.removeItem(index))
+  }
+
+  toggleItem = (index) => {
+    const {dispatch} = this.props
+    dispatch(actionCreators.toggleItem(index))
+  }
+
+  removeCompleted = () => {
+    const {dispatch} = this.props
+    dispatch(actionCreators.removeCompleted())
+  }
 render() {
   return (
-      <View style={styles.container}>
-        <Title> Todo List </Title>
+      <Title> Todo List </Title>
+        <Input
+          placeholder={'Enter an item!'}
+          onSubmit={this.addItem}
+        />
         <View style={styles.divider}/>
-        <List/>
+        <List
+          items={items}
+          onRemoveItem={this.removeItem}
+          onToggleItemCompleted={this.toggleItem}
+        />
         <View style={styles.divider} />
-        <Footer/>
+        <Footer onRemoveCompleted={this.removeCompleted} />
       </View>
     )
   }

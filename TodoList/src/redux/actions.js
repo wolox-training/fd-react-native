@@ -12,7 +12,7 @@ export const actionCreators = {
   removeItem: (index) => {
     return {type: types.REMOVE_ITEM, payload: index}
   },
-  toggleItemCompleted: (index) => {
+  toggleItem: (index) => {
     return {type: types.TOGGLE_ITEM, payload: index}
   },
   removeCompleted: (item) => {
