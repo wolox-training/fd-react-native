@@ -12,22 +12,6 @@ import Input from '../../components/Input'
 import { styles } from './styles.js'
 
 class ToDoApp extends Component {
-    addItem = (item) => {
-    const {dispatch} = this.props
-    dispatch(actionCreators.addItem(item))
-  }
-  removeItem = (index) => {
-    const {dispatch} = this.props
-    dispatch(actionCreators.removeItem(index))
-  }
-  toggleItem = (index) => {
-    const {dispatch} = this.props
-    dispatch(actionCreators.toggleItem(index))
-  }
-  removeCompleted = () => {
-    const {dispatch} = this.props
-    dispatch(actionCreators.removeCompleted())
-  }
 
 render() {
   const {items} = this.props
@@ -53,11 +37,25 @@ render() {
 
 ToDoApp.propTypes = {
   items: PropTypes.array.isRequired,
-  dispatch: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = (state) => ({
   items: state.items,
 })
 
-export default connect(mapStateToProps)(ToDoApp)
+const mapDispatchToProps = dispatch => ({
+  removeCompleted: () => {
+    dispatch(actionCreators.removeCompleted());
+  },
+  toggleItem: index => {
+    dispatch(actionCreators.toggleItem(index));
+  },
+  onRemoveItem: index => {
+    dispatch(actionCreators.removeItem(index));
+  },
+  addItem: item => {
+    dispatch(actionCreators.addItem(item));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ToDoApp)
