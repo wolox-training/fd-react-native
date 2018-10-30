@@ -13,17 +13,20 @@ import { styles } from './styles';
 class ToDoApp extends Component {
   render() {
     const { items } = this.props;
+    const { addItem } = this.props;
+    const { removeItem } = this.props;
+    const { toggleItem } = this.props;
     return (
       <View style={styles.container}>
         <Title> Todo List </Title>
         <Input
           placeholder="Enter an item!"
-          onSubmit={this.addItem}
+          onSubmit={addItem}
         />
         <List
           items={items}
-          onRemoveItem={this.removeItem}
-          onToggleItemCompleted={this.toggleItem}
+          onRemoveItem={removeItem}
+          onToggleItemCompleted={toggleItem}
         />
         <View style={styles.divider} />
         <Footer onRemoveCompleted={this.removeCompleted} />
@@ -34,6 +37,9 @@ class ToDoApp extends Component {
 
 ToDoApp.propTypes = {
   items: PropTypes.array.isRequired,
+  addItem: PropTypes.func.isRequired,
+  removeItem: PropTypes.func.isRequired,
+  toggleItem: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -44,7 +50,7 @@ const mapDispatchToProps = dispatch => ({
   addItem: (item) => {
     dispatch(actionCreators.addItem(item));
   },
-  onRemoveItem: (index) => {
+  removeItem: (index) => {
     dispatch(actionCreators.removeItem(index));
   },
   toggleItem: (index) => {

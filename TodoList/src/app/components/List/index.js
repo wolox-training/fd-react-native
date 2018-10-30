@@ -4,6 +4,7 @@ import {
   View,
   Text,
   FlatList,
+  ScrollView,
   TouchableOpacity,
 } from 'react-native';
 import Checkbox from '../Checkbox';
@@ -34,9 +35,11 @@ class List extends Component {
   render() {
     const { items } = this.props;
     return (
-      <FlatList style={styles.container}>
-        {items.map(this.renderItem)}
-      </FlatList>
+      <FlatList
+        data={items}
+        style={styles.container}
+        renderItem={this.renderItem}
+      />
     );
   }
 }

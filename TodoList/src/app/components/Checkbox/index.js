@@ -4,7 +4,7 @@ import { View, TouchableOpacity } from 'react-native';
 import styles from './styles';
 
 function Checkbox({ onToggle, isChecked }) {
-  const styleCheck = isChecked ? styles.box : styles.inner;
+  const styleCheck = isChecked ? styles.inner : styles.box;
   return (
     <TouchableOpacity onPress={onToggle}>
       <View style={styleCheck} />
