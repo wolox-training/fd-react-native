@@ -12,7 +12,7 @@ import Checkbox from '../Checkbox'
 import { styles } from './styles.js'
 
 function List (items) {
-  renderItem = (item, i) => {
+  renderItem = ({item, i}) => {
     const {onToggleItemCompleted, onRemoveItem} = this.props
     const itemStyle = item.completed ? [styles.item, styles.completed] : styles.item
     return (
