@@ -1,23 +1,26 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { TextInput } from 'react-native'
-import { styles } from './styles.js'
+import { TextInput } from 'react-native';
+import styles from './styles';
 
-function Input ({onSubmit, placeholder}) {
+class Input extends Component {
   state = { text: '' }
+
   onChangeText = text => {
-    this.setState({text})
+    this.setState({ text });
   }
 
   onSubmitEditing = () => {
-    const {onSubmit} = this.props
-    const {text} = this.state
-    if (!text) return
-    onSubmit(text)
-    this.setState({text: ''})
+    const { onSubmit } = this.props;
+    const { text } = this.state;
+    if (!text) return;
+    onSubmit(text);
+    this.setState({ text: '' });
   }
-  
-    const {text} = this.state
+
+  render() {
+    const { placeholder } = this.props;
+    const { text } = this.state;
 
     return (
       <TextInput
@@ -28,13 +31,13 @@ function Input ({onSubmit, placeholder}) {
         onSubmitEditing={this.onSubmitEditing}
         blurOnSubmit={false}
       />
-    )
+    );
   }
 }
 
 Input.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
-}
+};
 
 export default Input;
