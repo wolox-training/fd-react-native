@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../../colors';
 
 export const styles = StyleSheet.create({
   footer: {
@@ -6,7 +7,7 @@ export const styles = StyleSheet.create({
     padding: 25,
   },
   remove: {
-    color: 'red',
+    color: colors.red,
   },
 });
 

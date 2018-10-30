@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../../colors';
 
 const styles = StyleSheet.create({
   container: {
     borderBottomWidth: 1,
-    borderColor: 'grey',
+    borderColor: colors.grey,
   },
   item: {
     padding: 10,
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   completed: {
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
   },
   section: {
     flexDirection: 'row',

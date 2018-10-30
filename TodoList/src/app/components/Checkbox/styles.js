@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../../colors';
 
 const styles = StyleSheet.create({
   box: {
@@ -8,7 +9,7 @@ const styles = StyleSheet.create({
   },
   inner: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: colors.black,
   },
 });
 
