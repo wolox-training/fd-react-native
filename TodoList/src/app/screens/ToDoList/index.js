@@ -4,10 +4,10 @@ import { View } from 'react-native';
 import { connect } from 'react-redux';
 
 import { actionCreators } from '../../../redux/actions';
-import Title from '../../components/Title';
-import Footer from '../../components/Footer';
-import List from '../../components/List';
-import Input from '../../components/Input';
+import Title from './components/Title';
+import Footer from './components/Footer';
+import List from './components/List';
+import Input from './components/Input';
 import { styles } from './styles';
 
 class ToDoApp extends Component {

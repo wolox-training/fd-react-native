@@ -7,7 +7,7 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import Checkbox from '../Checkbox';
+import Checkbox from './Checkbox';
 import styles from './styles';
 
 class List extends Component {
