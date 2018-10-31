@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
   },
   remove: {
     color: colors.red,
-  },
+  }
 });
 
 export default styles;

@@ -4,7 +4,7 @@ const colors = {
   grey: '#DCDCDC',
   whiteSmoke: '#F5F5F5',
   blue: '#00BFFF',
-  white: '#F8F8FF',
+  white: '#F8F8FF'
 };
 
 export default colors;

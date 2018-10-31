@@ -1,7 +1,7 @@
 import { types } from './actions';
 
 const initialState = {
-  items: [],
+  items: []
 };
 
 const reducer = (state = initialState, action) => {
@@ -12,13 +12,13 @@ const reducer = (state = initialState, action) => {
     case types.ADD_ITEM: {
       return {
         ...state,
-        items: [{ label: payload, completed: false }, ...items],
+        items: [{ label: payload, completed: false }, ...items]
       };
     }
     case types.REMOVE_ITEM: {
       return {
         ...state,
-        items: items.filter((item, i) => i !== payload),
+        items: items.filter((item, i) => i !== payload)
       };
     }
     case types.TOGGLE_ITEM: {
@@ -29,13 +29,13 @@ const reducer = (state = initialState, action) => {
             return { label: item.label, completed: !item.completed };
           }
           return item;
-        }),
+        })
       };
     }
     case types.REMOVE_COMPLETED: {
       return {
         ...state,
-        items: items.filter(item => !item.completed),
+        items: items.filter(item => !item.completed)
       };
     }
     default: {

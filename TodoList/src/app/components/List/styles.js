@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   section: {
     flexDirection: 'row',
     alignItems: 'center',
-  },
+  }
 });
 
 export default styles;

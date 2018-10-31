@@ -13,7 +13,7 @@ import styles from './styles';
 class List extends Component {
   renderItem = (item, i) => {
     const { onToggleItemCompleted, onRemoveItem } = this.props;
-    const itemStyle = item.completed ? [styles.item, styles.completed] : styles.item;
+    const itemStyle = [styles.item, item.completed && styles.completed];
     return (
       <View key={i} style={itemStyle}>
         <Text>

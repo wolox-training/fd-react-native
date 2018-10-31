@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   inner: {
     flex: 1,
     backgroundColor: colors.black,
-  },
+  }
 });
 
 export default styles;

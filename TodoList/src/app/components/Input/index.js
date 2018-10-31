@@ -6,7 +6,7 @@ import styles from './styles';
 class Input extends Component {
   state = { text: '' }
 
-  onChangeText = (text) => {
+  onChangeText = text => {
     this.setState({ text });
   }
 

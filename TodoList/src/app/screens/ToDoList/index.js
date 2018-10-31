@@ -12,13 +12,12 @@ import { styles } from './styles';
 
 class ToDoApp extends Component {
   render() {
-    const { items } = this.props;
-    const { addItem } = this.props;
-    const { removeItem } = this.props;
-    const { toggleItem } = this.props;
+    const {
+      items, addItem, removeItem, toggleItem, removeCompleted
+    } = this.props;
     return (
       <View style={styles.container}>
-        <Title> Todo List </Title>
+        <Title />
         <Input
           placeholder="Enter an item!"
           onSubmit={addItem}
@@ -28,8 +27,7 @@ class ToDoApp extends Component {
           onRemoveItem={removeItem}
           onToggleItemCompleted={toggleItem}
         />
-        <View style={styles.divider} />
-        <Footer onRemoveCompleted={this.removeCompleted} />
+        <Footer onRemoveCompleted={removeCompleted} />
       </View>
     );
   }
@@ -40,25 +38,26 @@ ToDoApp.propTypes = {
   addItem: PropTypes.func.isRequired,
   removeItem: PropTypes.func.isRequired,
   toggleItem: PropTypes.func.isRequired,
+  removeCompleted: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
-  items: state.items,
+  items: state.items
 });
 
 const mapDispatchToProps = dispatch => ({
-  addItem: (item) => {
+  addItem: item => {
     dispatch(actionCreators.addItem(item));
   },
-  removeItem: (index) => {
+  removeItem: index => {
     dispatch(actionCreators.removeItem(index));
   },
-  toggleItem: (index) => {
+  toggleItem: index => {
     dispatch(actionCreators.toggleItem(index));
   },
   removeCompleted: () => {
     dispatch(actionCreators.removeCompleted());
-  },
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ToDoApp);

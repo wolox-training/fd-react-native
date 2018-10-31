@@ -3,14 +3,10 @@ import PropTypes from 'prop-types';
 import { Text } from 'react-native';
 import styles from './styles';
 
-function Title({ children }) {
+function Title() {
   return (
-    <Text style={styles.title}>{children}</Text>
+    <Text style={styles.title}>Todo List</Text>
   );
 }
-
-Title.propTypes = {
-  children: PropTypes.string.isRequired,
-};
 
 export default Title;

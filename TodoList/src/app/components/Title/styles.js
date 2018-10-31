@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     color: colors.white,
     height: 50,
     textAlign: 'center',
-  },
+  }
 });
 
 export default styles;
