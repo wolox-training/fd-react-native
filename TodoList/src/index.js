@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 
 import store from './redux/store.js';
-import ToDoApp from './app/screens/ToDoList/index'
+import ToDoApp from './app/Routes/RouteNavigation';
 
 class App extends Component {
   render() {
