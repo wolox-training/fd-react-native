@@ -1,18 +1,9 @@
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
-import Books from '../../screens/Books';
-import TodoList from '../../screens/ToDoList';
+import { Home, ToDoList } from '../../../constants/routes';
 
 const TabApp = createBottomTabNavigator({
-  Home: {
-    screen: Books,
-    navigationOptions: {
-      title: 'Books'
-    }
-  },
-  ToDoList: TodoList
-},
-{
-  initialRouteName: 'Home'
+  Home,
+  ToDoList
 },
 {
   tabBarOptions: {
@@ -23,7 +14,7 @@ const TabApp = createBottomTabNavigator({
 );
 
 export default StackNavigator = createStackNavigator({
-  Home: {
+  ToDoBook: {
     screen: TabApp,
     navigationOptions: {
       title: 'ToDoBookApp'
