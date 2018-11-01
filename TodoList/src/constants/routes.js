@@ -1,11 +1,5 @@
-import Books from '../app/screens/Books';
-import TodoList from '../app/screens/ToDoList';
-
-export const Home = {
-  screen: Books,
-  navigationOptions: {
-    title: 'Home'
-  }
+export default {
+  Books: 'BOOKS',
+  ToDoList: 'TODOLIST',
+  ToDoBook: 'TODOBOOK'
 }
-
-export const ToDoList = TodoList;
