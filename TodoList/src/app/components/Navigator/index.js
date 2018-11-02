@@ -1,12 +1,12 @@
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
-import Books from '../../screens/Books';
+import BooksList from '../../screens/BookList';
 import TodoList from '../../screens/ToDoList';
 import routes from '../../../constants/routes';
-import colors from '../../../constants/colors'
+import colors from '../../../constants/colors';
 
 const TabApp = createBottomTabNavigator({
   [routes.Books]: {
-    screen: Books,
+    screen: BooksList,
     navigationOptions: {
       title: 'Books'
     }

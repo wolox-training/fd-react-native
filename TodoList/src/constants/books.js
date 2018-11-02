@@ -1,7 +1,7 @@
-[
-   {
-      "id":1,
-      "author":"Emmie Thiel",
+const books = [
+  {
+    "id":1,
+    "author":"Emmie Thiel",
       "title":"Ring of Bright Water",
       "genre":"Short story",
       "publisher":"Butterworth-Heinemann",
@@ -80,4 +80,6 @@
       "year":"2011",
       "image_url":"http://wolox-training.s3.amazonaws.com/uploads/41DNuJfahyL._SX322_BO1_204_203_200_.jpg"
    }
-]
+];
+
+export default books;
