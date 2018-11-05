@@ -13,6 +13,10 @@ export const DETAILS = [
 ];
 
 class BookDetails extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    title: navigation.getParam('bookClicked').title
+  });
+
   state = {
     book: this.props.navigation.getParam('bookClicked')
   };

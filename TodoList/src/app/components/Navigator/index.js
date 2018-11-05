@@ -36,10 +36,7 @@ const StackNavigator = createStackNavigator({
     }
   },
   [routes.BooksDetails]: {
-    screen: BookDetails,
-    navigationOptions: {
-      title: 'Books Details'
-    }
+    screen: BookDetails
   }
 });
 
