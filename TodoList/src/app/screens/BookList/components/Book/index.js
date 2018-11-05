@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   View, Text, Image, TouchableOpacity
-}
-  from 'react-native';
+} from 'react-native';
 import styles from './styles';
 import books from '../../../../../constants/books';
 import routes from '../../../../../constants/routes';
@@ -22,13 +21,13 @@ function Book({
   );
   return (
     <TouchableOpacity style={styles.container} onPress={navigateToDetails}>
-    <View style={styles.container}>
-      {Img}
-      <View style={styles.textContainer}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.author}>{author}</Text>
+      <View style={styles.container}>
+        {Img}
+        <View style={styles.textContainer}>
+          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.author}>{author}</Text>
+        </View>
       </View>
-    </View>
     </TouchableOpacity>
   );
 }
@@ -46,4 +45,4 @@ Book.propTypes = {
   author: PropTypes.string,
   title: PropTypes.string,
   image_url: PropTypes.string
-}
+};

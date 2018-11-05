@@ -5,7 +5,16 @@ import books from '../../../constants/books';
 import Book from './components/Book';
 
 class BookList extends Component {
-  renderItem = ({ item }) => <Book image={item.image_url} title={item.title} author={item.author} key={item.id} navigation={this.props.navigation} id={item.id} />;
+  renderItem = ({ item }) => (
+    <Book
+      image={item.image_url}
+      title={item.title}
+      author={item.author}
+      key={item.id}
+      navigation={this.props.navigation}
+      id={item.id}
+    />
+  );
 
   render() {
     return <FlatList data={books} renderItem={this.renderItem} />;
