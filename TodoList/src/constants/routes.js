@@ -1,5 +1,6 @@
 export default {
   Books: 'BOOKS',
   ToDoList: 'TODOLIST',
-  ToDoBook: 'TODOBOOK'
+  ToDoBook: 'TODOBOOK',
+  BooksDetails: 'BOOKSDETAILS'
 };

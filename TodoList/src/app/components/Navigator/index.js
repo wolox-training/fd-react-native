@@ -1,6 +1,7 @@
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import BooksList from '../../screens/BookList';
 import TodoList from '../../screens/ToDoList';
+import BookDetails from '../../screens/BookDetails';
 import routes from '../../../constants/routes';
 import colors from '../../../constants/colors';
 
@@ -32,6 +33,12 @@ const StackNavigator = createStackNavigator({
     screen: TabApp,
     navigationOptions: {
       title: 'To Do Book App'
+    }
+  },
+  [routes.BooksDetails]: {
+    screen: BookDetails,
+    navigationOptions: {
+      title: 'Books Details'
     }
   }
 });
