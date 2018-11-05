@@ -12,7 +12,8 @@ const styles = StyleSheet.create({
   },
   icon: {
     height: ICON_SIZE,
-    width: ICON_SIZE
+    width: ICON_SIZE,
+    borderRadius: ICON_SIZE / 2
   },
   title: {
     color: colors.black
@@ -21,10 +22,10 @@ const styles = StyleSheet.create({
     color: colors.black
   },
   circle: {
+    borderRadius: ICON_SIZE / 2,
     height: ICON_SIZE,
     width: ICON_SIZE,
-    resizeMode: 'contain',
-    backgroundColor: colors.black
+    backgroundColor: colors.grey
   }
 });
 
