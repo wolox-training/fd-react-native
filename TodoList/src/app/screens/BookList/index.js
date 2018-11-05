@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { books } from '../../../constants/books';
+import books from '../../../constants/books';
 
 import BookListLayout from './layout';
 

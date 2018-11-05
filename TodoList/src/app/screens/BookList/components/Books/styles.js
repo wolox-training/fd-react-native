@@ -15,10 +15,16 @@ const styles = StyleSheet.create({
     width: ICON_SIZE
   },
   title: {
-    color: colors.grey
+    color: colors.black
   },
   author: {
-    color: colors.grey
+    color: colors.black
+  },
+  circle: {
+    height: ICON_SIZE,
+    width: ICON_SIZE,
+    resizeMode: 'contain',
+    backgroundColor: colors.black
   }
 });
 
