@@ -6,23 +6,16 @@ const ICON_SIZE = 50;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.white,
     borderRadius: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: colors.grey,
     display: 'flex',
-    flexDirection: 'row',
-    padding: 10
+    flexDirection: 'row'
   },
   icon: {
-    marginRight: 20,
     height: ICON_SIZE,
     width: ICON_SIZE
   },
   title: {
-    color: colors.grey,
-    fontWeight: 'bold',
-    marginBottom: 5
+    color: colors.grey
   },
   author: {
     color: colors.grey

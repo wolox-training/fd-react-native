@@ -26,16 +26,15 @@ class BookDetails extends Component {
     return (
       <View style={styles.container}>
         {
-          DETAILS.map(field =>
+          DETAILS.map(field => (
             <View key={field.value} style={styles.row}>
-              <Text style={styles.label}>{`${field.label}: `}</Text>
-              <Text style={styles.text}>{this.state.book[field.value]}</Text>
+              <Text>{this.state.book[field.value]}</Text>
             </View>
-          )
+          ))
         }
       </View>
-    )
+    );
   }
-};
+}
 
 export default BookDetails;

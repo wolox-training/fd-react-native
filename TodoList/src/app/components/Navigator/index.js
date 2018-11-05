@@ -1,5 +1,5 @@
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
-import BooksList from '../../screens/BookList';
+import BooksList from '../../screens/BookDetails';
 import TodoList from '../../screens/ToDoList';
 import routes from '../../../constants/routes';
 import colors from '../../../constants/colors';
