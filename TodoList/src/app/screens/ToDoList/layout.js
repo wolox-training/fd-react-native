@@ -10,7 +10,7 @@ import List from './components/List';
 import Input from './components/Input';
 import { styles } from './styles';
 
-function ToDoApp({
+function ToDoList({
   items, addItem, removeItem, toggleItem, removeCompleted
 }) {
   return (
@@ -23,7 +23,7 @@ function ToDoApp({
   );
 }
 
-ToDoApp.propTypes = {
+ToDoList.propTypes = {
   items: PropTypes.array.isRequired,
   addItem: PropTypes.func.isRequired,
   removeItem: PropTypes.func.isRequired,
@@ -31,4 +31,4 @@ ToDoApp.propTypes = {
   removeCompleted: PropTypes.func.isRequired
 };
 
-export default ToDoApp;
+export default ToDoList;
