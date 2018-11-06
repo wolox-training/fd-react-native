@@ -12,7 +12,7 @@ function Footer({ onRemoveCompleted }) {
 }
 
 Footer.propTypes = {
-  onRemoveCompleted: PropTypes.func.isRequired,
+  onRemoveCompleted: PropTypes.func.isRequired
 };
 
 export default Footer;

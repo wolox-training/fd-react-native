@@ -1,30 +1,37 @@
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
-import Books from '../../screens/Books';
+import BooksList from '../../screens/BookList';
 import TodoList from '../../screens/ToDoList';
 import routes from '../../../constants/routes';
-import colors from '../../../constants/colors'
+import colors from '../../../constants/colors';
 
-const TabApp = createBottomTabNavigator({
-  [routes.Books]: {
-    screen: Books,
-    navigationOptions: {
-      title: 'Books'
+const TabApp = createBottomTabNavigator(
+  {
+    [routes.Books]: {
+      screen: BooksList,
+      navigationOptions: {
+        title: 'Books'
+      }
+    },
+    [routes.ToDoList]: {
+      screen: TodoList,
+      navigationOptions: {
+        title: 'To Do List'
+      }
     }
   },
-  [routes.ToDoList]: TodoList
-},
-{
-  tabBarOptions: {
-    activeTintColor: colors.red,
-    inactiveTintColor: colors.grey
+  {
+    tabBarOptions: {
+      activeTintColor: colors.red,
+      inactiveTintColor: colors.grey
+    }
   }
-});
+);
 
 const StackNavigator = createStackNavigator({
   [routes.ToDoBook]: {
     screen: TabApp,
     navigationOptions: {
-      title: 'ToDoBookApp'
+      title: 'To Do Book App'
     }
   }
 });
