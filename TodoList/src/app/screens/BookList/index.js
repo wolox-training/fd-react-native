@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FlatList } from 'react-native';
 import PropTypes from 'prop-types';
 import books from '../../../constants/books';
-import Book from './components/Books';
+import Book from './components/Book';
 
 class BookList extends Component {
   renderItem = ({ item }) => <Book image={item.image_url} title={item.title} author={item.author} key={item.id} />;
