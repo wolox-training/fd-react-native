@@ -4,14 +4,6 @@ import { Text, View } from 'react-native';
 
 import styles from './styles';
 
-export const DETAILS = [
-  { value: 'title', label: 'Title' },
-  { value: 'author', label: 'Author' },
-  { value: 'genre', label: 'Genre' },
-  { value: 'publisher', label: 'Publisher' },
-  { value: 'year', label: 'Year' }
-];
-
 class BookDetails extends Component {
   static navigationOptions = ({ navigation }) => ({
     title: navigation.getParam('bookClicked').title
@@ -25,11 +17,13 @@ class BookDetails extends Component {
     return (
       <View style={styles.container}>
         {
-          DETAILS.map(field => (
-            <View key={field.value} style={styles.row}>
-              <Text>{this.state.book[field.value]}</Text>
+            <View>
+              <Text>{this.state.book.title}</Text>
+              <Text>{this.state.book.author}</Text>
+              <Text>{this.state.book.genre}</Text>
+              <Text>{this.state.book.publisher}</Text>
+              <Text>{this.state.book.year}</Text>
             </View>
-          ))
         }
       </View>
     );

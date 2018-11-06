@@ -7,12 +7,12 @@ import Book from './components/Book';
 class BookList extends Component {
   renderItem = ({ item }) => (
     <Book
+      book={item}
       image={item.image_url}
       title={item.title}
       author={item.author}
       key={item.id}
       navigation={this.props.navigation}
-      id={item.id}
     />
   );
 
@@ -20,19 +20,5 @@ class BookList extends Component {
     return <FlatList data={books} renderItem={this.renderItem} />;
   }
 }
-
-BookList.propTypes = {
-  books: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      author: PropTypes.string,
-      title: PropTypes.string,
-      genre: PropTypes.string,
-      publisher: PropTypes.string,
-      year: PropTypes.string,
-      image_url: PropTypes.string
-    })
-  )
-};
 
 export default BookList;
