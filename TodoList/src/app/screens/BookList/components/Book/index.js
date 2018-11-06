@@ -36,7 +36,8 @@ Book.propTypes = {
   author: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   image: PropTypes.string,
-  id: PropTypes.number
+  id: PropTypes.number,
+  navigation: PropTypes.func.isRequired
 };
 
 export default Book;
