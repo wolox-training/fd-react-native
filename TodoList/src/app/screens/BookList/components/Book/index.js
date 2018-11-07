@@ -1,29 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, Image } from 'react-native';
+import {
+  View, Text, Image, TouchableOpacity
+} from 'react-native';
+import { withNavigation } from 'react-navigation';
 import styles from './styles';
+import routes from '../../../../../constants/routes';
+import Book from './layout';
 
-function Book({ image, title, author }) {
-  const Img = image ? (
-    <Image source={{ uri: image }} style={styles.icon} />
+class BookContainer extends Component {
+  Img = this.props.book.image_url ? (
+    <Image source={{ uri: this.props.book.image_url }} style={styles.icon} />
   ) : (
     <View style={styles.circle} />
   );
-  return (
-    <View style={styles.container}>
-      {Img}
-      <View style={styles.textContainer}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.author}>{author}</Text>
-      </View>
-    </View>
-  );
+
+  navigateToDetails = () => {
+    const bookClicked = this.props.book;
+    this.props.navigation.navigate(routes.BooksDetails, { bookClicked });
+  };
+
+  render() {
+    return (
+      <Book title={this.props.book.title} author={this.props.book.author} image={this.Img} navigate={this.navigateToDetails} />
+    );
+  }
 }
 
-Book.propTypes = {
-  author: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  image: PropTypes.string
-};
-
-export default Book;
+export default withNavigation(BookContainer);

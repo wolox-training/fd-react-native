@@ -5,25 +5,16 @@ import books from '../../../constants/books';
 import Book from './components/Book';
 
 class BookList extends Component {
-  renderItem = ({ item }) => <Book image={item.image_url} title={item.title} author={item.author} key={item.id} />;
+  renderItem = ({ item }) => (
+    <Book
+      book={item}
+      key={item.id}
+    />
+  );
 
   render() {
     return <FlatList data={books} renderItem={this.renderItem} />;
   }
 }
-
-BookList.propTypes = {
-  books: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      author: PropTypes.string,
-      title: PropTypes.string,
-      genre: PropTypes.string,
-      publisher: PropTypes.string,
-      year: PropTypes.string,
-      image_url: PropTypes.string
-    })
-  )
-};
 
 export default BookList;
