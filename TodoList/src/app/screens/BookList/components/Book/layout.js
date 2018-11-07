@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import styles from './styles';
 
-function BookLayout({
+function Book({
   title, author, image, navigate
 }) {
   return (
@@ -21,11 +21,11 @@ function BookLayout({
   );
 }
 
-BookLayout.propTypes = {
+Book.propTypes = {
   author: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  image: PropTypes.object,
+  image: PropTypes.node,
   navigate: PropTypes.func.isRequired
 };
 
-export default BookLayout
+export default Book;

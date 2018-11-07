@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Text, View, Image } from 'react-native';
+import { Text, View } from 'react-native';
 
 import styles from './styles';
 
@@ -25,5 +25,11 @@ class BookDetails extends Component {
     );
   }
 }
+
+BookDetails.propTypes = {
+  navigation: PropTypes.shape({
+    getParam: PropTypes.func.isRequired
+  }).isRequired
+};
 
 export default BookDetails;

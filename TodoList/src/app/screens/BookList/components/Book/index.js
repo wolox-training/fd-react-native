@@ -6,9 +6,9 @@ import {
 import { withNavigation } from 'react-navigation';
 import styles from './styles';
 import routes from '../../../../../constants/routes';
-import BookLayout from './layout'
+import Book from './layout';
 
-class Book extends Component {
+class BookContainer extends Component {
   Img = this.props.book.image_url ? (
     <Image source={{ uri: this.props.book.image_url }} style={styles.icon} />
   ) : (
@@ -22,9 +22,9 @@ class Book extends Component {
 
   render() {
     return (
-      <BookLayout title={this.props.book.title} author={this.props.book.author} image={this.Img} navigate={this.navigateToDetails} />
+      <Book title={this.props.book.title} author={this.props.book.author} image={this.Img} navigate={this.navigateToDetails} />
     );
   }
 }
 
-export default withNavigation(Book);
+export default withNavigation(BookContainer);
