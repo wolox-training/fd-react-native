@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Text, View } from 'react-native';
+import { Text, View, Image } from 'react-native';
 
 import styles from './styles';
 
@@ -16,15 +16,11 @@ class BookDetails extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {
-            <View>
-              <Text>{this.state.book.title}</Text>
-              <Text>{this.state.book.author}</Text>
-              <Text>{this.state.book.genre}</Text>
-              <Text>{this.state.book.publisher}</Text>
-              <Text>{this.state.book.year}</Text>
-            </View>
-        }
+        <Text>{this.state.book.title}</Text>
+        <Text>{this.state.book.author}</Text>
+        <Text>{this.state.book.genre}</Text>
+        <Text>{this.state.book.publisher}</Text>
+        <Text>{this.state.book.year}</Text>
       </View>
     );
   }

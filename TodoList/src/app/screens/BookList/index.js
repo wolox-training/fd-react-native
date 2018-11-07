@@ -8,11 +8,7 @@ class BookList extends Component {
   renderItem = ({ item }) => (
     <Book
       book={item}
-      image={item.image_url}
-      title={item.title}
-      author={item.author}
       key={item.id}
-      navigation={this.props.navigation}
     />
   );
 
